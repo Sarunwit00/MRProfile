@@ -30,7 +30,15 @@ class ProfileScreen extends StatelessWidget {
           ),
         ),
         SizedBox(height: 20,),
-        ProfileMenu(),
+        ProfileMenu(title: "User manage",icons: Icons.person,),
+        SizedBox(height: 15,),
+        ProfileMenu(title: "Billing Detail",icons: Icons.wallet,),
+        SizedBox(height: 15,),
+        ProfileMenu(title: "QR Code",icons: Icons.qr_code,),
+        SizedBox(height: 15,),
+        ProfileMenu(title: "Setting",icons: Icons.settings,),
+        SizedBox(height: 15,),
+        ProfileMenu(title: "Logout",icons: Icons.logout,),
       ],
     ));
   }
