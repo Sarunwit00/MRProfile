@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 const bgPrimaryColor = Colors.black;
-const bgSecondaryColor = Color.fromARGB(255, 33, 243, 208);
+const bgSecondaryColor = Color.fromARGB(255, 139, 139, 139);
 
 const textPrimaryColor = Colors.white;
 const textSecondary = Color.fromARGB(255, 247, 184, 103);
@@ -13,11 +13,17 @@ const iconSecondary = Colors.white;
 final texttitle = GoogleFonts.poppins(
   fontSize: 20,
   fontWeight: FontWeight.w600,
-  color: textPrimaryColor,
+  color: bgPrimaryColor,
 );
 
 final textSubTitle = GoogleFonts.poppins(
   fontSize: 14,
-  fontWeight: FontWeight.w100,
-  color: textPrimaryColor,
+  fontWeight: FontWeight.w300,
+  color: bgPrimaryColor,
+);
+
+final textBtn = GoogleFonts.poppins(
+  fontSize: 20,
+  color:Colors.black,
+  fontWeight: FontWeight.w500,
 );
