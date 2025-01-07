@@ -15,7 +15,7 @@ class ProfileScreen extends StatelessWidget {
               backgroundColor: Colors.blue,
               radius: 100,
               child: CircleAvatar(
-                radius: 100,
+                radius: 96,
                 backgroundImage: AssetImage(
                     'images/images.jpg'), // ใช้ backgroundImage แทน backgroundColor
               ),
