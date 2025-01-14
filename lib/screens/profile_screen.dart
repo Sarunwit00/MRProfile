@@ -15,9 +15,9 @@ class ProfileScreen extends StatelessWidget {
       children: [
         ProfileImage(),
         SizedBox(height: 20,),
-        Text("Mr.Natdanai Nuya",style: texttitle,),
+        Text("Mr.Sarunwit Pibul",style: texttitle,),
         SizedBox(height: 15,),
-        Text("s6503051624149@kmutnb.ac.th",style: textSubTitle,),
+        Text("s6503051624211@kmutnb.ac.th",style: textSubTitle,),
         SizedBox(height: 15,),
         Container(
           width: 150,
