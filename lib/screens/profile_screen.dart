@@ -4,42 +4,96 @@ import 'package:flutter/material.dart';
 import 'package:modern_profile/components/profile_img.dart';
 import 'package:modern_profile/components/profile_menu.dart';
 import 'package:modern_profile/constant/constant.dart';
+import 'package:modern_profile/screens/editprofile_screen.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
+
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  int _selectedItem = 0;
+
+  void _navigationBottonBar(int index){
+    setState(() {
+      _selectedItem = index;
+      print(_selectedItem);
+    });
+  }
+  final List<Widget> _pages = [
+    Text('home'),
+    Text('favorit'),
+    Text('setting'),
+    EditProfileScreen(),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-      children: [
-        ProfileImage(),
-        SizedBox(height: 20,),
-        Text("Mr.Sarunwit Pibul",style: texttitle,),
-        SizedBox(height: 15,),
-        Text("s6503051624211@kmutnb.ac.th",style: textSubTitle,),
-        SizedBox(height: 15,),
-        Container(
-          width: 150,
-          height: 40,
-          decoration: BoxDecoration(
-              color: Colors.amber, borderRadius: BorderRadius.circular(25.0)),
-          child: Center(
-              child: Text("Edit Profile",style: textBtn,
-          ),
-          ),
+      appBar: AppBar(
+        leading: Icon(
+          Icons.arrow_back,
+          size: 20,
+          color: iconPrimary,
         ),
-        SizedBox(height: 20,),
-        ProfileMenu(title: "User manage",icons: Icons.person,),
-        SizedBox(height: 15,),
-        ProfileMenu(title: "Billing Detail",icons: Icons.wallet,),
-        SizedBox(height: 15,),
-        ProfileMenu(title: "QR Code",icons: Icons.qr_code,),
-        SizedBox(height: 15,),
-        ProfileMenu(title: "Setting",icons: Icons.settings,),
-        SizedBox(height: 15,),
-        ProfileMenu(title: "Logout",icons: Icons.logout,),
-      ],
-    ));
+        title: Center(
+            child: Text(
+          'Edit Profile',
+          style: texttitle,
+        )),
+        actions: const [
+          Icon(
+            Icons.exit_to_app,
+            size: 24,
+            color: iconPrimary,
+          ),
+          SizedBox(
+            width: 10,
+          ),
+        ],
+      ),
+      body: _pages[_selectedItem],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedItem,
+        onTap: _navigationBottonBar,
+        type: BottomNavigationBarType.fixed,
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home,
+                size: 30,
+                color: iconPrimary,
+              ),
+              label: 'home'
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.favorite,
+                size: 30,
+                color: iconPrimary,
+              ),
+              label: 'favorite'
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.settings,
+                size: 30,
+                color: iconPrimary,
+              ),
+              label: 'Setting'
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.person,
+                size: 30,
+                color: iconPrimary,
+              ),
+              label: 'Edit Profile'
+          ),
+        ],
+      ),
+    );
   }
 }
