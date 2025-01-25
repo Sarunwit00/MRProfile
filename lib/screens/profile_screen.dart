@@ -24,7 +24,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
   final List<Widget> _pages = [
     Text('home'),
-    Text('favorit'),
+    Text('favorite'),
     Text('setting'),
     EditProfileScreen(),
   ];
